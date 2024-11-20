@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:quizler/buttons/startbutton.dart';
+import 'package:quizler/question_bank/question_bank.dart';
 
 class AddQuestionPage extends StatefulWidget {
-  
   const AddQuestionPage({super.key});
 
   @override
-  _AddQuestionPageState createState() => _AddQuestionPageState();
+  State<AddQuestionPage> createState() => _AddQuestionPageState();
 }
 
 class _AddQuestionPageState extends State<AddQuestionPage> {
@@ -93,7 +93,16 @@ class _AddQuestionPageState extends State<AddQuestionPage> {
             const SizedBox(height: 20),
             Center(
               child: StartButton(txt: 'Save Question', onPressed: () {
-              
+                QuestionBank.addToList(_questionController.text, _answer!);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    backgroundColor: Colors.green,
+                    content: Text('Question added successfully!'),
+                    duration: Duration(seconds: 2), // Optional: how long the SnackBar will be shown
+                  ),
+                );
+                Navigator.pop(context);
+
               })
             ),
           ],

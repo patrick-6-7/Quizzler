@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quizler/pages/add_question_page.dart';
-import 'package:quizler/pages/edit_question_page.dart';
+import 'package:quizler/pages/new_edit_page.dart';
 
 
 class SettingsPage extends StatelessWidget {
@@ -33,7 +33,7 @@ class SettingsPage extends StatelessWidget {
               // Navigate to Edit Questions screen
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const EditQuestionPage()),
+                MaterialPageRoute(builder: (context) => const EditQuestionInfoPage()),
               );
             },
           ),

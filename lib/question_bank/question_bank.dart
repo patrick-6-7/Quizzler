@@ -1,4 +1,4 @@
-import 'package:quizler/question.dart/questions.dart';
+import 'package:quizler/question_bank/questions.dart';
 
 class QuestionBank{
   static List<Questions> questionsList = [
